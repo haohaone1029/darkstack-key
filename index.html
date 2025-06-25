@@ -1,35 +1,48 @@
+import Head from 'next/head';
+
 export default function Home() {
   return (
     <>
       <Head>
         <title>DARKSTACK - Nhận Key</title>
         <meta name="description" content="DarkStack Key Web by Trần Hào" />
+        <link rel="icon" href="/favicon.ico" />
+        {/* Nhạc nền */}
+        <audio autoPlay loop>
+          <source src="https://files.catbox.moe/9xry6p.mp3" type="audio/mpeg" />
+        </audio>
       </Head>
 
       <div style={{
         minHeight: '100vh',
-        background: '#000',
+        background: 'linear-gradient(to bottom right, #000000, #111111)',
         color: '#00ffff',
         fontFamily: 'Arial, sans-serif',
-        padding: '30px',
-        textAlign: 'center'
+        textAlign: 'center',
+        padding: '40px'
       }}>
+        {/* Logo DARKSTACK */}
         <img
-          src="https://i.imgur.com/UgUUaGG.png"
-          alt="Admin Avatar"
+          src="https://i.imgur.com/nd5umLL.png"
+          alt="DARKSTACK TEAM"
           style={{
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            border: '3px solid #00ffff',
-            marginBottom: '20px'
+            width: '200px',
+            marginBottom: '30px',
+            borderRadius: '12px',
+            boxShadow: '0 0 20px #00ffff'
           }}
         />
 
-        <h1>🔑 DARKSTACK - NHẬN KEY MIỄN PHÍ</h1>
-        <h2>🔐 DarkStack Key Web by Trần Hào</h2>
-        <p>Trang web xác minh key DarkStack – code by <b>Mun</b>.</p>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '10px' }}>🔑 DARKSTACK - NHẬN KEY MIỄN PHÍ</h1>
+        <h2 style={{ fontSize: '1.3rem', color: '#0ff', marginBottom: '20px' }}>
+          🔐 DarkStack Key Web by <span style={{ color: '#fff' }}>Trần Hào</span>
+        </h2>
 
+        <p style={{ fontSize: '1rem', color: '#aaa', maxWidth: 600, margin: '0 auto' }}>
+          Trang web xác minh key DarkStack – code by <b>Mun</b>.
+        </p>
+
+        {/* Nút nhận key & mua key */}
         <div style={{ marginTop: 30 }}>
           <a href="/getkey" style={{
             background: '#00ffff',
@@ -55,10 +68,11 @@ export default function Home() {
           </a>
         </div>
 
+        {/* Liên hệ admin */}
         <div style={{ marginTop: 40, fontSize: '0.9rem', color: '#ccc' }}>
           <p>📞 Zalo Admin: <b>035xxx3011</b></p>
-          <p>📺 YouTube: <a href="https://www.youtube.com/@yourchannel" style={{ color: '#0ff' }}>@yourchannel</a></p>
-          <p>🌐 Facebook: <a href="https://facebook.com/yourprofile" style={{ color: '#0ff' }}>fb.com/yourprofile</a></p>
+          <p>📺 YouTube: <a href="https://www.youtube.com/@yourchannel" target="_blank" style={{ color: '#0ff' }}>@yourchannel</a></p>
+          <p>🌐 Facebook: <a href="https://facebook.com/yourprofile" target="_blank" style={{ color: '#0ff' }}>fb.com/yourprofile</a></p>
         </div>
       </div>
     </>
