@@ -7,7 +7,6 @@ export default function Home() {
         <title>DARKSTACK - Nhận Key</title>
         <meta name="description" content="DarkStack Key Web by Trần Hào" />
         <link rel="icon" href="/favicon.ico" />
-        {/* Nhạc nền */}
         <audio autoPlay loop>
           <source src="https://files.catbox.moe/9xry6p.mp3" type="audio/mpeg" />
         </audio>
@@ -15,64 +14,70 @@ export default function Home() {
 
       <div style={{
         minHeight: '100vh',
-        background: 'linear-gradient(to bottom right, #000000, #111111)',
+        background: 'radial-gradient(ellipse at center, #000 0%, #0c0c0c 100%)',
         color: '#00ffff',
-        fontFamily: 'Arial, sans-serif',
+        fontFamily: "'Courier New', Courier, monospace",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
         textAlign: 'center',
         padding: '40px'
       }}>
-        {/* Logo DARKSTACK */}
+        {/* Logo */}
         <img
           src="https://i.imgur.com/nd5umLL.png"
           alt="DARKSTACK TEAM"
           style={{
-            width: '200px',
-            marginBottom: '30px',
+            width: '180px',
             borderRadius: '12px',
+            marginBottom: '30px',
             boxShadow: '0 0 20px #00ffff'
           }}
         />
 
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '10px' }}>🔑 DARKSTACK - NHẬN KEY MIỄN PHÍ</h1>
-        <h2 style={{ fontSize: '1.3rem', color: '#0ff', marginBottom: '20px' }}>
-          🔐 DarkStack Key Web by <span style={{ color: '#fff' }}>Trần Hào</span>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '10px' }}>
+          🔑 DARKSTACK - NHẬN KEY MIỄN PHÍ
+        </h1>
+
+        <h2 style={{ fontSize: '1.3rem', color: '#00ffff', marginBottom: '20px' }}>
+          🔐 DarkStack Key Web by <span style={{ color: '#ffffff' }}>Trần Hào</span>
         </h2>
 
-        <p style={{ fontSize: '1rem', color: '#aaa', maxWidth: 600, margin: '0 auto' }}>
+        <p style={{ maxWidth: '500px', color: '#cccccc' }}>
           Trang web xác minh key DarkStack – code by <b>Mun</b>.
         </p>
 
-        {/* Nút nhận key & mua key */}
-        <div style={{ marginTop: 30 }}>
+        {/* Nút */}
+        <div style={{ marginTop: '30px', display: 'flex', gap: '15px', flexWrap: 'wrap', justifyContent: 'center' }}>
           <a href="/getkey" style={{
-            background: '#00ffff',
+            backgroundColor: '#00ffff',
             color: '#000',
             padding: '12px 24px',
             borderRadius: '10px',
             textDecoration: 'none',
             fontWeight: 'bold',
-            marginRight: '10px'
-          }}>
-            🎁 Nhận key miễn phí
-          </a>
+            boxShadow: '0 0 10px #00ffff',
+            transition: '0.3s'
+          }}>🎁 Nhận key miễn phí</a>
 
           <a href="/buy" style={{
-            background: '#0ff',
+            backgroundColor: '#00ffcc',
             color: '#000',
             padding: '12px 24px',
             borderRadius: '10px',
             textDecoration: 'none',
-            fontWeight: 'bold'
-          }}>
-            💰 Mua key (1 ngày / 7 ngày)
-          </a>
+            fontWeight: 'bold',
+            boxShadow: '0 0 10px #00ffcc',
+            transition: '0.3s'
+          }}>💰 Mua key (1 ngày / 7 ngày)</a>
         </div>
 
-        {/* Liên hệ admin */}
-        <div style={{ marginTop: 40, fontSize: '0.9rem', color: '#ccc' }}>
+        {/* Info */}
+        <div style={{ marginTop: '40px', fontSize: '0.95rem', color: '#aaa' }}>
           <p>📞 Zalo Admin: <b>035xxx3011</b></p>
-          <p>📺 YouTube: <a href="https://www.youtube.com/@yourchannel" target="_blank" style={{ color: '#0ff' }}>@yourchannel</a></p>
-          <p>🌐 Facebook: <a href="https://facebook.com/yourprofile" target="_blank" style={{ color: '#0ff' }}>fb.com/yourprofile</a></p>
+          <p>📺 YouTube: <a href="https://www.youtube.com/@yourchannel" target="_blank" style={{ color: '#00ffff' }}>@yourchannel</a></p>
+          <p>🌐 Facebook: <a href="https://facebook.com/yourprofile" target="_blank" style={{ color: '#00ffff' }}>fb.com/yourprofile</a></p>
         </div>
       </div>
     </>
