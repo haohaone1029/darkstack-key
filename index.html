@@ -6,21 +6,14 @@ export default function Home() {
       <Head>
         <title>DARKSTACK - Nhận Key</title>
         <meta name="description" content="DarkStack Key Web by Trần Hào" />
-        <link rel="icon" href="/favicon.ico" />
-        <audio autoPlay loop>
-          <source src="https://files.catbox.moe/9xry6p.mp3" type="audio/mpeg" />
-        </audio>
       </Head>
 
       <div style={{
         minHeight: '100vh',
-        background: 'linear-gradient(to bottom right, #000000, #1a1a1a)',
+        background: '#000',
         color: '#00ffff',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: '30px',
         fontFamily: 'Arial, sans-serif',
+        padding: '30px',
         textAlign: 'center'
       }}>
         <img
@@ -35,52 +28,39 @@ export default function Home() {
           }}
         />
 
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '10px' }}>
-          🔑 DARKSTACK - NHẬN KEY MIỄN PHÍ
-        </h1>
+        <h1>🔑 DARKSTACK - NHẬN KEY MIỄN PHÍ</h1>
+        <h2>🔐 DarkStack Key Web by Trần Hào</h2>
+        <p>Trang web xác minh key DarkStack – code by <b>Mun</b>.</p>
 
-        <h2 style={{ fontSize: '1.3rem', color: '#0ff', marginBottom: '20px' }}>
-          🔐 DarkStack Key Web by <span style={{ color: '#fff' }}>Trần Hào</span>
-        </h2>
-
-        <p style={{ fontSize: '1rem', color: '#aaa', maxWidth: 600 }}>
-          Trang web xác minh key DarkStack – code by <b>Mun</b>.
-        </p>
-
-        <a href="/getkey"
-          style={{
+        <div style={{ marginTop: 30 }}>
+          <a href="/getkey" style={{
             background: '#00ffff',
             color: '#000',
-            padding: '12px 28px',
+            padding: '12px 24px',
             borderRadius: '10px',
+            textDecoration: 'none',
             fontWeight: 'bold',
-            fontSize: '1rem',
-            marginTop: '30px',
-            textDecoration: 'none'
-          }}
-        >
-          🎁 Nhận key miễn phí
-        </a>
+            marginRight: '10px'
+          }}>
+            🎁 Nhận key miễn phí
+          </a>
 
-        <a href="/buy"
-          style={{
+          <a href="/buy" style={{
             background: '#0ff',
             color: '#000',
-            padding: '10px 24px',
-            borderRadius: '8px',
-            fontWeight: 'bold',
-            fontSize: '1rem',
-            marginTop: '15px',
-            textDecoration: 'none'
-          }}
-        >
-          💰 Mua key (1 ngày / 7 ngày)
-        </a>
+            padding: '12px 24px',
+            borderRadius: '10px',
+            textDecoration: 'none',
+            fontWeight: 'bold'
+          }}>
+            💰 Mua key (1 ngày / 7 ngày)
+          </a>
+        </div>
 
-        <div style={{ marginTop: '40px', color: '#ccc', fontSize: '0.9rem' }}>
+        <div style={{ marginTop: 40, fontSize: '0.9rem', color: '#ccc' }}>
           <p>📞 Zalo Admin: <b>035xxx3011</b></p>
-          <p>📺 YouTube: <a href="https://www.youtube.com/@yourchannel" style={{ color: '#00ffff' }}>@yourchannel</a></p>
-          <p>🌐 Facebook: <a href="https://facebook.com/yourprofile" style={{ color: '#00ffff' }}>fb.com/yourprofile</a></p>
+          <p>📺 YouTube: <a href="https://www.youtube.com/@yourchannel" style={{ color: '#0ff' }}>@yourchannel</a></p>
+          <p>🌐 Facebook: <a href="https://facebook.com/yourprofile" style={{ color: '#0ff' }}>fb.com/yourprofile</a></p>
         </div>
       </div>
     </>
