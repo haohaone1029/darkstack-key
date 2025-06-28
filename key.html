@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎁 NHẬN KEY DARKSTACK MIỄN PHÍ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      color: #ff4081;
+      margin-bottom: 10px;
+    }
+    .box {
+      background: #1e1e1e;
+      border: 2px dashed #ff80ab;
+      padding: 30px;
+      border-radius: 14px;
+      max-width: 400px;
+    }
+    #keyBox {
+      font-size: 20px;
+      margin-top: 20px;
+      background: #311b3f;
+      padding: 15px;
+      border-radius: 10px;
+      color: #f48fb1;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>🎁 Nhận Key Miễn Phí</h1>
+    <div>Hiệu lực: 24 giờ</div>
+    <div id="keyBox">🔄 Đang tạo key...</div>
+    <button onclick="copyKey()">📋 Copy Key</button>
+  </div>
+
+  <script>
+    function copyKey() {
+      const key = document.getElementById("keyBox").textContent;
+      navigator.clipboard.writeText(key);
+      alert("✅ Đã copy key: " + key);
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("done") === "1") {
+      fetch('https://api.ipify.org?format=json')
+        .then(res => res.json())
+        .then(data => {
+          const ipNum = data.ip.replace(/\D/g, '');
+          const d = new Date();
+          const code = d.getDate() * 27 + 27;
+          const key = `DARKSTACK${code}${ipNum}`;
+          document.getElementById('keyBox').textContent = key;
+        })
+        .catch(() => {
+          document.getElementById('keyBox').textContent = "❌ Không thể tạo key.";
+        });
+    } else {
+      document.getElementById('keyBox').textContent = "🚫 Bạn chưa vượt link để nhận key.";
+    }
+  </script>
+
+</body>
+</html>
