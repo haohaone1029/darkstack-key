@@ -3,64 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🌸 DARKSTACK - TEAM | Shop Key Trần Hào 🌸</title>
+  <title>🌌 DARKSTACK - Shop Key Trần Hào 🌌</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
-      background: linear-gradient(135deg, #ffe1f0, #ffffff);
-      color: #444;
+      background: black;
+      color: #eee;
+      overflow-x: hidden;
+    }
+
+    .stars, .stars2, .stars3 {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: transparent url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/starfield.png') repeat;
+      z-index: -1;
+      animation: moveStars 200s linear infinite;
+    }
+
+    .stars2 { background-size: 500px; opacity: 0.4; animation-duration: 400s; }
+    .stars3 { background-size: 800px; opacity: 0.2; animation-duration: 800s; }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
     }
 
     header {
-      background-color: #ff87b2;
-      color: white;
-      padding: 20px 0;
       text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 25px 10px;
+      font-size: 30px;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(45deg, #880e4f, #d81b60);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
     }
 
     .container {
       max-width: 960px;
       margin: 40px auto;
       padding: 20px;
+      text-align: center;
     }
 
     .card {
-      background-color: white;
+      background-color: rgba(0,0,0,0.6);
       border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 24px rgba(255,255,255,0.1);
       padding: 20px;
       margin-bottom: 30px;
       display: flex;
       align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+      flex-wrap: wrap;
     }
 
     .card img {
       width: 120px;
-      height: auto;
       border-radius: 12px;
-      margin-right: 20px;
+      margin: 10px 20px;
     }
 
     .card h3 {
       margin: 0;
-      color: #ff4d8b;
+      color: #ff4081;
     }
 
     .card p {
       margin: 5px 0 15px;
-      font-size: 14px;
-      color: #666;
+      font-size: 15px;
+      color: #ddd;
     }
 
     .buttons {
       display: flex;
+      justify-content: center;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 10px;
     }
 
     .btn {
@@ -68,113 +90,275 @@
       border: none;
       border-radius: 8px;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 15px;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: 0.3s;
     }
 
-    .buy-btn {
-      background-color: #6cd980;
-      color: white;
-    }
+    .buy-btn { background: #4caf50; color: #fff; }
+    .free-btn { background: #e91e63; color: #fff; }
+    .btn:hover { transform: scale(1.05); opacity: 0.9; }
 
-    .free-btn {
-      background-color: #ff4d8b;
-      color: white;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-
-    .contact {
-      text-align: center;
-      margin-top: 40px;
+    .key-reveal {
+      margin-top: 20px;
+      padding: 20px;
+      background: #1e1e1e;
+      border: 2px dashed #ff80ab;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #f06292;
     }
 
     .contact a {
       display: inline-block;
       margin: 10px;
       padding: 10px 20px;
-      background-color: #ff69b4;
-      color: white;
+      background: #ad1457;
+      color: #fff;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
     }
 
-    .contact a:hover {
-      background-color: #ff4081;
-    }
+    .contact a:hover { background: #d81b60; }
 
-    .key-reveal {
-      text-align: center;
-      font-size: 18px;
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #fff3f8;
-      border: 2px dashed #ff87b2;
-      border-radius: 12px;
-      color: #d80072;
+    #toggleMusicBtn {
+      background: #6a1b9a;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
       font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    #typingBox {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #fff;
+      height: 28px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 5px #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       font-size: 14px;
-      color: #aaa;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 0 15px white;
+    }
+
+    .slogan {
+      font-size: 16px;
+      margin-top: 10px;
+      color: #ff4081;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ff4081;
+    }
+
+    /* Modal Background */
+    #vipModal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* Modal Content */
+    #vipModalContent {
+      background: #1e1e1e;
+      border-radius: 16px;
+      padding: 25px 30px;
+      max-width: 400px;
+      width: 100%;
+      color: #ff4081;
+      box-shadow: 0 8px 24px rgba(255,64,129,0.7);
+      text-align: center;
+      position: relative;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    #vipModalContent h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #ff80ab;
+      text-shadow: 0 0 10px #ff80ab;
+    }
+
+    #vipModalContent p {
+      margin: 10px 0;
+      color: #f06292;
+      font-weight: 600;
+    }
+
+    #closeVipModal {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      color: #ff80ab;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+
+    #closeVipModal:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    🌸 DARKSTACK - TEAM | SHOP KEY HÀO MUN 🌸
-  </header>
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
+
+  <header>🌌 DARKSTACK - TEAM | SHOP KEY HÀO MUN 🌌</header>
 
   <div class="container">
-
-    <!-- Key Card -->
     <div class="card">
       <img src="https://i.imgur.com/5nQKWZk.gif" alt="Anime Key" />
       <div>
         <h3>🎁 Key TOOL DDOS DARKSTACK EXTREME</h3>
         <p>Miễn phí khi vượt link | Chính hãng - 24H</p>
         <div class="buttons">
-          <button class="btn buy-btn">Mua Key Vip</button>
+          <button class="btn buy-btn" id="buyVipBtn">Mua Key Vip</button>
           <button class="btn free-btn" onclick="window.location.href='https://link4m.com/pq22ZmQR'">Vượt link nhận key</button>
         </div>
-
-        <!-- Key sẽ hiển thị sau khi vượt link -->
         <div id="keyBox" style="display: none;" class="key-reveal">
-          🎉 KEY MIỄN PHÍ: <span style="color: #c2185b;">XXXXX-XXXXX-XXXXX-XXXXX</span>
+          🎉 KEY MIỄN PHÍ: <span id="keyValue">Đang tạo...</span><br><br>
+          <button onclick="navigator.clipboard.writeText(document.getElementById('keyValue').textContent)">📋 Copy Key</button>
         </div>
       </div>
     </div>
 
-    <!-- Liên hệ -->
     <div class="contact">
-      <a href="https://www.facebook.com/profile.php?id=61577099144089&locale=vi_VN" target="_blank">📘 Facebook Admin</a>
+      <a href="https://www.facebook.com/profile.php?id=61577099144089" target="_blank">📘 Facebook Admin</a>
       <a href="https://zalo.me/0559705922" target="_blank">💬 Zalo Admin</a>
       <a href="https://zalo.me/g/xpalzx263" target="_blank">🌌 Nhóm Zalo</a>
     </div>
 
+    <button id="toggleMusicBtn" onclick="toggleMusic()">🎵 Bật Nhạc</button>
+
+    <div id="typingBox"></div>
   </div>
 
   <footer>
-    © 2025 - DARKSTACK - TEAM | WEBSITE BY TRẦN HÀO DEV 💖
+    © 2025 - DARKSTACK TEAM | DEV TRẦN HÀO 🧠<br>
+    <div class="slogan">“DARKSTACK – Không cần được biết đến, chỉ cần được khiếp sợ.”</div>
   </footer>
 
+  <!-- Modal Mua Key VIP -->
+  <div id="vipModal">
+    <div id="vipModalContent">
+      <button id="closeVipModal" aria-label="Close Modal">&times;</button>
+      <h2>💎 Mua Key VIP DARKSTACK 💎</h2>
+      <p>Giá key VIP:</p>
+      <p>• 1 ngày: <strong>3,000₫</strong></p>
+      <p>• 7 ngày: <strong>15,000₫</strong></p>
+      <p><strong>Ngân hàng MB Bank</strong></p>
+      <p>Số tài khoản: <strong>0559705922</strong></p>
+      <p>Chủ tài khoản: <strong>TRAN PHUONG NGOC LAN</strong></p>
+      <p>Vui lòng chuyển khoản và liên hệ Zalo Admin để nhận key.</p>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop autoplay hidden>
+    <source src="https://pomf2.lain.la/f/l5nv41b6.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
-    // Kiểm tra nếu URL có ?done=1 thì hiển thị key
+    // Tạo key theo IP
     const params = new URLSearchParams(window.location.search);
     if (params.get("done") === "1") {
-      document.getElementById("keyBox").style.display = "block";
+      fetch('https://api.ipify.org?format=json')
+        .then(res => res.json())
+        .then(data => {
+          const ipNum = data.ip.replace(/\D/g, '');
+          const date = new Date();
+          const code = date.getDate() * 27 + 27;
+          const key = `DARKSTACK${code}${ipNum}`;
+          document.getElementById('keyValue').textContent = key;
+          document.getElementById('keyBox').style.display = 'block';
+        });
     }
-  </script>
 
+    // Nhạc nền
+    const music = document.getElementById("bgMusic");
+    const toggleBtn = document.getElementById("toggleMusicBtn");
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        toggleBtn.textContent = "🎵 Tắt Nhạc";
+      } else {
+        music.pause();
+        toggleBtn.textContent = "🎵 Bật Nhạc";
+      }
+    }
+
+    // Gõ từng chữ + thay đổi nội dung
+    const messages = [
+      "🧠 Developer chính thức - Trần Hào",
+      "💻 Tôi nghiện hack – không phải vì ăn cắp, mà vì thử thách và phiêu lưu 🔐",
+      "🌌 Ở đâu có hệ thống , ở đó DarkStack tìm ra lỗ hổng.",
+      "🔐 DarkStack không hỏi lệnh – nó là lệnh.",
+      "🎧 DarkStack – nơi sự tinh tế và nguy hiểm gặp nhau."
+    ];
+    let msgIndex = 0;
+    let charIndex = 0;
+    const box = document.getElementById("typingBox");
+
+    function typeWriter() {
+      if (charIndex <= messages[msgIndex].length) {
+        box.textContent = messages[msgIndex].slice(0, charIndex++);
+        setTimeout(typeWriter, 70);
+      } else {
+        setTimeout(() => {
+          charIndex = 0;
+          msgIndex = (msgIndex + 1) % messages.length;
+          typeWriter();
+        }, 2500);
+      }
+    }
+    typeWriter();
+
+    // Modal mua key VIP
+    const vipModal = document.getElementById("vipModal");
+    const buyVipBtn = document.getElementById("buyVipBtn");
+    const closeVipBtn = document.getElementById("closeVipModal");
+
+    buyVipBtn.addEventListener('click', () => {
+      vipModal.style.display = "flex";
+      // Nếu muốn ngưng nhạc khi mở modal, có thể thêm music.pause() ở đây
+    });
+
+    closeVipBtn.addEventListener('click', () => {
+      vipModal.style.display = "none";
+    });
+
+    // Đóng modal khi click ngoài modal content
+    vipModal.addEventListener('click', (e) => {
+      if (e.target === vipModal) {
+        vipModal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
