@@ -1,245 +1,224 @@
-<!DOCTYPE html>
+không tôi nói code này <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🌸 DARKSTACK - TEAM | Shop Key Trần Hào 🌸</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎁 Nhận KEY DARKSTACK Miễn Phí</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
       background: linear-gradient(135deg, #ffe1f0, #ffffff);
       color: #444;
-    }
-
-    header {
-      background-color: #ff87b2;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       padding: 20px;
+      box-sizing: border-box;
     }
-
-    .card {
+    .box {
       background-color: white;
       border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      padding: 20px;
-      margin-bottom: 30px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
+      box-shadow: 0 8px 24px rgba(197, 81, 146, 0.4);
+      padding: 40px 30px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      border: 3px dashed #ff87b2;
+      color: #d80072;
+      font-weight: 700;
+      font-size: 20px;
+      user-select: none;
+      position: relative;
+      transition: box-shadow 0.4s ease-in-out;
     }
-
-    .card img {
-      width: 120px;
-      height: auto;
-      border-radius: 12px;
-      margin-right: 20px;
+    .box.glow {
+      box-shadow:
+        0 0 8px #ff4d8b,
+        0 0 16px #ff4d8b,
+        0 0 24px #ff4d8b,
+        0 0 32px #ff4d8b;
     }
-
-    .card h3 {
-      margin: 0;
+    .box h1 {
       color: #ff4d8b;
+      margin-bottom: 8px;
+      font-weight: 900;
+      font-size: 28px;
+      text-shadow: 0 0 6px #ff4d8b99;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
     }
-
-    .card p {
-      margin: 5px 0 15px;
+    .subtitle {
+      font-size: 14px;
+      color: #c2185bcc;
+      font-weight: 700;
+      margin-bottom: 20px;
+      user-select: none;
+    }
+    .key {
+      margin-top: 15px;
+      font-size: 26px;
+      color: #c2185b;
+      background-color: #fff3f8;
+      padding: 18px 22px;
+      border-radius: 14px;
+      box-shadow: inset 0 0 10px #ff4d8b44;
+      letter-spacing: 4px;
+      min-height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+    }
+    .error {
+      color: #b00020;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    button.reload-btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(45deg, #ff4d8b, #ff87b2);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px #ff4d8baa;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    button.reload-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px #ff4d8bcc;
+    }
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #ff4d8b;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      animation: spin 1s linear infinite;
+      margin-right: 10px;
+      display: inline-block;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    footer {
+      margin-top: 40px;
       font-size: 14px;
       color: #666;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn {
-      padding: 10px 16px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .buy-btn {
-      background-color: #6cd980;
-      color: white;
-    }
-
-    .free-btn {
-      background-color: #ff4d8b;
-      color: white;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-
-    .contact {
       text-align: center;
-      margin-top: 40px;
+      user-select: none;
     }
-
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #ff69b4;
-      color: white;
-      border-radius: 8px;
+    footer a {
+      color: #ff4d8b;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      margin: 0 10px;
+      transition: color 0.3s ease;
     }
-
-    .contact a:hover {
-      background-color: #ff4081;
-    }
-
-    .key-reveal {
-      text-align: center;
-      font-size: 18px;
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #fff3f8;
-      border: 2px dashed #ff87b2;
-      border-radius: 12px;
+    footer a:hover {
       color: #d80072;
-      font-weight: bold;
     }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #aaa;
+    .copyright {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #999;
+      user-select: none;
     }
-
-    /* VIP Section */
-    #vipSection {
-      display: none;
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #fff9fc;
-      border: 2px dashed #ff87b2;
-      border-radius: 12px;
+    img.icon-gif {
+      width: 32px;
+      height: 32px;
+      user-select: none;
     }
-
-    #vipSection h4 {
-      color: #d80072;
-      margin-bottom: 10px;
-    }
-
-    #vipSection ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    #vipSection li {
-      margin-bottom: 5px;
-    }
-
-    #vipSection button {
-      background-color: #ff87b2;
-      color: white;
-      border: none;
-      padding: 4px 10px;
-      margin-left: 10px;
-      font-size: 13px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    #vipSection button:hover {
-      background-color: #ff4d8b;
+    @media (max-width: 480px) {
+      .box {
+        padding: 30px 20px;
+        font-size: 18px;
+      }
+      .key {
+        font-size: 22px;
+        padding: 14px 18px;
+        letter-spacing: 3px;
+        min-height: 42px;
+      }
+      .box h1 {
+        font-size: 24px;
+      }
+      button.reload-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+      }
+      img.icon-gif {
+        width: 24px;
+        height: 24px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    🌸 DARKSTACK - TEAM | SHOP KEY HÀO MUN 🌸
-  </header>
-
-  <div class="container">
-
-    <!-- Key Card -->
-    <div class="card">
-      <img src="https://i.imgur.com/5nQKWZk.gif" alt="Anime Key" />
-      <div>
-        <h3>🎁 Key TOOL DDOS DARKSTACK EXTREME</h3>
-        <p>Miễn phí khi vượt link | Chính hãng - 24H</p>
-        <div class="buttons">
-          <button class="btn buy-btn">Mua Key Vip</button>
-          <button class="btn free-btn" onclick="window.location.href='https://link4m.com/yaTIy'">Vượt link nhận key</button>
-        </div>
-
-        <!-- Hiển thị thanh toán VIP -->
-        <div id="vipSection">
-          <h4>💎 Chọn loại Key:</h4>
-            <li>🔹 <strong>Key 1 ngày:</strong> 3.000đ</li>
-            <li>🔹 <strong>Key 7 ngày:</strong> 15.000đ</li>
-          </ul>
-          <p>💳 <strong>Thanh toán MB Bank:</strong><br>
-             <span style="font-weight:bold; font-size:16px; color:#c2185b;">0559705922</span>
-             <button onclick="copyAccount()">📋 Sao chép</button>
-          </p>
-          <p>📩 Sau khi thanh toán, liên hệ Zalo admin để nhận Key.</p>
-        </div>
-
-        <!-- Key sẽ hiển thị sau khi vượt link -->
-        <div id="keyBox" style="display: none;" class="key-reveal">
-          🎉 KEY MIỄN PHÍ: <span style="color: #c2185b;">XXXXX-XXXXX-XXXXX-XXXXX</span>
-        </div>
-      </div>
+  <div class="box" id="keyContainer">
+    <h1>
+      🎁 KEY MIỄN PHÍ CỦA BẠN
+     
+    </h1>
+    <div class="subtitle">Hiệu lực: 24h</div>
+    <div id="keyBox" class="key">
+      <span class="spinner"></span> Đang lấy key...
     </div>
-
-    <!-- Liên hệ -->
-    <div class="contact">
-      <a href="https://www.facebook.com/profile.php?id=61577099144089&locale=vi_VN" target="_blank">📘 Facebook Admin</a>
-      <a href="https://zalo.me/0559705922" target="_blank">💬 Zalo Admin</a>
-      <a href="https://zalo.me/g/xpalzx263" target="_blank">🌌 Nhóm Zalo</a>
-    </div>
-
+    <button class="reload-btn" onclick="fetchKey()">Tải lại key</button>
   </div>
 
   <footer>
-    © 2025 - DARKSTACK - TEAM | WEBSITE BY TRẦN HÀO DEV 💖
+    Liên hệ: 
+    <a href="https://www.facebook.com/profile.php?id=61577099144089&locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook Admin</a> | 
+    <a href="https://zalo.me/0559705922" target="_blank" rel="noopener noreferrer">Zalo Admin</a> | 
+    <a href="https://zalo.me/g/xpalzx263" target="_blank" rel="noopener noreferrer">Nhóm Zalo</a>
+    <div class="copyright">
+      © 2025 - DARKSTACK - TEAM | WEBSITE BY TRẦN HÀO DEV 💖
+    </div>
   </footer>
 
   <script>
-    // Hiện phần mua VIP khi bấm nút
-    document.querySelector('.buy-btn').addEventListener('click', function () {
-      const vipBox = document.getElementById('vipSection');
-      vipBox.style.display = vipBox.style.display === 'none' ? 'block' : 'none';
-    });
+    const keyBox = document.getElementById('keyBox');
+    const container = document.getElementById('keyContainer');
 
-    // Hiển thị key nếu đã vượt link
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("done") === "1") {
-      document.getElementById("keyBox").style.display = "block";
+    function setLoading() {
+      keyBox.innerHTML = '<span class="spinner"></span> Đang lấy key...';
+      container.classList.remove('glow');
     }
 
-    // Sao chép STK
-    function copyAccount() {
-      navigator.clipboard.writeText("0559705922").then(() => {
-        alert("📋 Đã sao chép số tài khoản!");
-      });
+    function fetchKey() {
+      setLoading();
+      fetch('/api/getkey')
+        .then(res => res.json())
+        .then(data => {
+          if (data.key) {
+            keyBox.textContent = data.key;
+            container.classList.add('glow');
+          } else {
+            keyBox.innerHTML = '<span class="error">Hết key rồi, quay lại sau!</span>';
+            container.classList.remove('glow');
+          }
+        })
+        .catch(() => {
+          keyBox.innerHTML = '<span class="error">Lỗi khi lấy key!</span>';
+          container.classList.remove('glow');
+        });
     }
+
+    // Tự động gọi lấy key khi tải trang
+    fetchKey();
   </script>
 
 </body>
