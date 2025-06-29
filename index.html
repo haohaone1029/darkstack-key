@@ -20,6 +20,7 @@
       background: black;
       color: #eee;
       overflow-x: hidden;
+      height: 100%;
     }
     .stars, .stars2, .stars3 {
       position: fixed;
@@ -151,50 +152,74 @@
       font-weight: bold;
       text-shadow: 0 0 10px #ff4081;
     }
+
+    /* Modal Mua Key Vip - căn giữa màn hình */
     #vipModal {
       display: none;
       position: fixed;
       z-index: 9999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      backdrop-filter: blur(6px);
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    #vipModalContent {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: #1e1e1e;
       border-radius: 16px;
       padding: 25px 30px;
       max-width: 400px;
-      width: 100%;
+      width: 90vw;
       color: #ff4081;
       box-shadow: 0 8px 24px rgba(255,64,129,0.7);
       font-weight: bold;
       font-size: 16px;
-      margin-left: 10px;
+      text-align: center;
+    }
+    #vipModalContent {
+      position: relative;
     }
     #vipModalContent h2 {
-      text-align: center;
       color: #ff80ab;
+      margin-bottom: 15px;
     }
     #vipModalContent p {
       color: #f06292;
+      margin: 6px 0;
     }
-    #closeVipModal {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: transparent;
+
+    /* Modal chào mừng full màn hình */
+    #welcomeModal {
+      display: flex;
+      position: fixed;
+      z-index: 10000;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0,0,0,0.9);
+      backdrop-filter: blur(6px);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      flex-direction: column;
+    }
+    #welcomeModal img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff4081;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    #closeWelcomeModal {
+      background: #ff4081;
       border: none;
-      font-size: 28px;
-      color: #ff80ab;
-      cursor: pointer;
+      padding: 10px 24px;
+      border-radius: 30px;
       font-weight: bold;
-      transition: color 0.3s;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-    #closeVipModal:hover { color: #fff; }
+    #closeWelcomeModal:hover {
+      background-color: #e91e63;
+    }
   </style>
 </head>
 <body>
@@ -239,14 +264,14 @@
   </footer>
 
   <div style="text-align:center; margin-top: 15px; margin-bottom: 30px;">
-    <img src="https://i.imgur.com/JnHMXQo.png" alt="Darkstack Banner" style="width: 160px; border-radius: 10px; box-shadow: 0 0 10px #ff4081;">
+    <img src="https://i.imgur.com/NXOEuIc.png" alt="Darkstack Banner" style="width: 160px; border-radius: 10px; box-shadow: 0 0 10px #ff4081;">
   </div>
 
-  <!-- MODAL -->
-  <div id="vipModal">
+  <!-- Modal Mua Key Vip -->
+  <div id="vipModal" aria-hidden="true" role="dialog" aria-labelledby="vipModalTitle">
     <div id="vipModalContent">
-      <button id="closeVipModal">&times;</button>
-      <h2>💎 Mua Key VIP DARKSTACK 💎</h2>
+      <!-- Nút đóng đã xóa -->
+      <h2 id="vipModalTitle">💎 Mua Key VIP DARKSTACK 💎</h2>
       <p>• 1 ngày: <strong>3.000₫</strong></p>
       <p>• 7 ngày: <strong>15.000₫</strong></p>
       <p>Ngân hàng: <strong>MB Bank</strong></p>
@@ -254,6 +279,12 @@
       <p>Chủ tài khoản: <strong>TRAN PHUONG NGOC LAN</strong></p>
       <p>Liên hệ Zalo để nhận key sau khi chuyển khoản.</p>
     </div>
+  </div>
+
+  <!-- Modal chào mừng khi mới vào trang -->
+  <div id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeModalTitle">
+    <img src="https://i.imgur.com/mfvIwkp.png" alt="Chào mừng đến DARKSTACK" />
+    <button id="closeWelcomeModal" aria-label="Đóng chào mừng">Đóng</button>
   </div>
 
   <audio id="bgMusic" loop autoplay hidden>
@@ -290,10 +321,10 @@
     // Typing chữ
     const messages = [
       "🧠 Developer chính thức - Trần Hào",
-      "💻 Tôi nghiện hack – không phải vì ăn cắp, \nmà vì thử thách và phiêu lưu 🔐",
+      "💻 Tôi nghiện hack – không phải vì ăn cắp,  \nmà vì thử thách và phiêu lưu 🔐",
       "🌌 Ở đâu có hệ thống, \nở đó DarkStack tìm ra lỗ hổng.",
       "🔐 DarkStack không hỏi lệnh – nó là lệnh.",
-      "🎧 DarkStack TEAM, \nNơi sự tinh tế và nguy hiểm gặp nhau."
+      "🎧 DarkStack Team, \nnơi sự tinh tế và nguy hiểm gặp nhau."
     ];
     let msgIndex = 0, charIndex = 0;
     const box = document.getElementById("typingBox");
@@ -312,13 +343,24 @@
     }
     typeWriter();
 
-    // Modal Mua Key
+    // Modal Mua Key Vip
     const vipModal = document.getElementById("vipModal");
     const buyVipBtn = document.getElementById("buyVipBtn");
-    const closeVipBtn = document.getElementById("closeVipModal");
-    buyVipBtn.onclick = () => vipModal.style.display = "flex";
-    closeVipBtn.onclick = () => vipModal.style.display = "none";
-    vipModal.onclick = e => { if (e.target === vipModal) vipModal.style.display = "none"; };
+    buyVipBtn.onclick = () => vipModal.style.display = "block";
+    // Không có nút đóng, chỉ có click nền ngoài để đóng
+    vipModal.onclick = e => {
+      if (e.target === vipModal) vipModal.style.display = "none";
+    };
+
+    // Modal Chào Mừng
+    const welcomeModal = document.getElementById("welcomeModal");
+    const closeWelcomeBtn = document.getElementById("closeWelcomeModal");
+    closeWelcomeBtn.onclick = () => {
+      welcomeModal.style.display = "none";
+    };
+    welcomeModal.onclick = e => {
+      if (e.target === welcomeModal) welcomeModal.style.display = "none";
+    };
   </script>
 
 </body>
